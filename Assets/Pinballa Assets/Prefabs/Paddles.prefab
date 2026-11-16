@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7568422685326056739}
   - component: {fileID: 7377032135591418968}
   - component: {fileID: 5201941827673012647}
+  - component: {fileID: 2948556636940775240}
+  - component: {fileID: 8724325279675306264}
   m_Layer: 0
   m_Name: R_Paddle
   m_TagString: Untagged
@@ -27,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4667706844568222668}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04345342, y: -0.08707283, z: -0.0038016832, w: 0.9952465}
-  m_LocalPosition: {x: 5.745, y: 0.72482, z: -0.9783802}
-  m_LocalScale: {x: 4.5, y: 1, z: 1}
+  m_LocalRotation: {x: -0.043453433, y: -0.08707283, z: -0.003801684, w: 0.9952465}
+  m_LocalPosition: {x: -1.75, y: 0.19999999, z: -0.25}
+  m_LocalScale: {x: 4.5000014, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4282369957548493545}
+  m_Father: {fileID: 5707205423533192156}
   m_LocalEulerAnglesHint: {x: -5, y: -10, z: 0}
 --- !u!33 &7568422685326056739
 MeshFilter:
@@ -106,12 +108,52 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2948556636940775240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667706844568222668}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &8724325279675306264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667706844568222668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1af3331d6c8bd24dbc29201d1d3ac22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BumperScript
+  bouncePower: 100
 --- !u!1 &5488375120050228765
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +166,8 @@ GameObject:
   - component: {fileID: 5375936387749546369}
   - component: {fileID: 1890483976368911652}
   - component: {fileID: 1931133626415244692}
+  - component: {fileID: 3319786955393008123}
+  - component: {fileID: 3019243662481601506}
   m_Layer: 0
   m_Name: L_Paddle
   m_TagString: Untagged
@@ -139,12 +183,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5488375120050228765}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04345342, y: 0.08707283, z: 0.0038016832, w: 0.9952465}
-  m_LocalPosition: {x: -3.2549999, y: 0.72482, z: -0.9783802}
-  m_LocalScale: {x: 4.5, y: 1, z: 1}
+  m_LocalRotation: {x: -0.043453436, y: 0.08707283, z: 0.0038016841, w: 0.9952465}
+  m_LocalPosition: {x: 1.9499996, y: 0.19999999, z: -0.25}
+  m_LocalScale: {x: 4.5000014, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4282369957548493545}
+  m_Father: {fileID: 6595079573573123728}
   m_LocalEulerAnglesHint: {x: -5, y: 10, z: 0}
 --- !u!33 &5375936387749546369
 MeshFilter:
@@ -218,12 +262,84 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3319786955393008123
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488375120050228765}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &3019243662481601506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488375120050228765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1af3331d6c8bd24dbc29201d1d3ac22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BumperScript
+  bouncePower: 100
+--- !u!1 &7006451683099505495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6595079573573123728}
+  m_Layer: 0
+  m_Name: L_PaddlePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6595079573573123728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7006451683099505495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.2, y: 0.5, z: -0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2003253568805011923}
+  m_Father: {fileID: 4282369957548493545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7279982765048379057
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4282369957548493545}
+  - component: {fileID: 9180559894241185737}
   m_Layer: 0
   m_Name: Paddles
   m_TagString: Untagged
@@ -248,12 +365,61 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7279982765048379057}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: -0.7, z: -14}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3, y: -1, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2003253568805011923}
-  - {fileID: 9118525829549305582}
+  - {fileID: 6595079573573123728}
+  - {fileID: 5707205423533192156}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9180559894241185737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7279982765048379057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15de31174a973b542a3c8f2cefa50271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlipperScript
+  leftFlipper: {fileID: 5488375120050228765}
+  rightFlipper: {fileID: 4667706844568222668}
+  leftPivot: {fileID: 7006451683099505495}
+  rightPivot: {fileID: 8515434765533274278}
+  flipRotationRate: 500
+--- !u!1 &8515434765533274278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5707205423533192156}
+  m_Layer: 0
+  m_Name: R_PaddlePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5707205423533192156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515434765533274278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 0.5, z: -0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9118525829549305582}
+  m_Father: {fileID: 4282369957548493545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

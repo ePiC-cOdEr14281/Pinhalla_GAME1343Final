@@ -79,5 +79,15 @@ public class FlipperScript : MonoBehaviour
         {
             rightPivot.transform.rotation = Quaternion.RotateTowards(rightPivot.transform.rotation, rightStartingRotation, flipRotationRate * Time.deltaTime);
         }
+
+    }
+
+    void OnTriggerEnter(Collider other) //Idk yet
+    {
+        PinballScript pb = other.gameObject.GetComponent<PinballScript>();
+        if (pb)
+        {
+
+        }
     }
 }
