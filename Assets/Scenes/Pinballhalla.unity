@@ -397,7 +397,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlipperScript
   leftFlipper: {fileID: 8080972838970728815}
   rightFlipper: {fileID: 8991655775091053758}
-  flipRotationRate: 100
+  leftPivot: {fileID: 2001436333}
+  rightPivot: {fileID: 969917693}
+  flipRotationRate: 500
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +461,7 @@ GameObject:
   m_Layer: 0
   m_Name: R_PaddlePivot
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -472,10 +474,11 @@ Transform:
   m_GameObject: {fileID: 969917693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0.5, z: -0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4793029582305558940}
   m_Father: {fileID: 531927392675571099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407200432 stripped
@@ -495,6 +498,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13da44d59c42a164198770ee17e92e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PinballScript
+--- !u!54 &1407200442
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407200432}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2001436333
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +537,7 @@ GameObject:
   m_Layer: 0
   m_Name: L_PaddlePivot
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -520,10 +550,11 @@ Transform:
   m_GameObject: {fileID: 2001436333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.2, y: 0.5, z: -0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2865201328201248417}
   m_Father: {fileID: 531927392675571099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &531927392675571099
@@ -541,8 +572,6 @@ Transform:
   m_Children:
   - {fileID: 2001436334}
   - {fileID: 969917694}
-  - {fileID: 2865201328201248417}
-  - {fileID: 4793029582305558940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1831488191386958887
@@ -554,8 +583,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -563,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.08
       objectReference: {fileID: 0}
     - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -593,6 +634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1415681551819969673, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3536501793481966880, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       propertyPath: m_Name
       value: Pinball
@@ -604,6 +649,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3536501793481966880, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1407200437}
+    - targetCorrespondingSourceObject: {fileID: 3536501793481966880, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1407200442}
   m_SourcePrefab: {fileID: 100100000, guid: 88c5bee88124de14ea34cd6387224d3d, type: 3}
 --- !u!23 &2752711772011551318
 MeshRenderer:
@@ -683,12 +731,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080972838970728815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.043453433, y: 0.08707283, z: 0.003801684, w: 0.9952465}
-  m_LocalPosition: {x: -3.2549999, y: 0.72482, z: -0.9783802}
-  m_LocalScale: {x: 4.500001, y: 1, z: 1}
+  m_LocalRotation: {x: -0.043453436, y: 0.08707283, z: 0.0038016841, w: 0.9952465}
+  m_LocalPosition: {x: 1.9499996, y: 0.19999999, z: -0.25}
+  m_LocalScale: {x: 4.5000014, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 531927392675571099}
+  m_Father: {fileID: 2001436334}
   m_LocalEulerAnglesHint: {x: -5, y: 10, z: 0}
 --- !u!4 &4793029582305558940
 Transform:
@@ -698,12 +746,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8991655775091053758}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04345343, y: -0.08707283, z: -0.0038016837, w: 0.9952465}
-  m_LocalPosition: {x: 5.745, y: 0.72482, z: -0.9783802}
-  m_LocalScale: {x: 4.500001, y: 1, z: 1}
+  m_LocalRotation: {x: -0.043453433, y: -0.08707283, z: -0.003801684, w: 0.9952465}
+  m_LocalPosition: {x: -1.75, y: 0.19999999, z: -0.25}
+  m_LocalScale: {x: 4.5000014, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 531927392675571099}
+  m_Father: {fileID: 969917694}
   m_LocalEulerAnglesHint: {x: -5, y: -10, z: 0}
 --- !u!33 &6127061230048752209
 MeshFilter:
@@ -791,6 +839,7 @@ GameObject:
   - component: {fileID: 8544709779370092275}
   - component: {fileID: 2752711772011551318}
   - component: {fileID: 2793078537249835750}
+  - component: {fileID: 8544709779370092276}
   m_Layer: 0
   m_Name: L_Paddle
   m_TagString: Untagged
@@ -827,6 +876,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8080972838970728815}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &8544709779370092276
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080972838970728815}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &8991655775091053758
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +915,7 @@ GameObject:
   - component: {fileID: 6127061230048752209}
   - component: {fileID: 6516632007455339306}
   - component: {fileID: 8376347222869251797}
+  - component: {fileID: 8991655775091053759}
   m_Layer: 0
   m_Name: R_Paddle
   m_TagString: Untagged
@@ -846,6 +923,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &8991655775091053759
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8991655775091053758}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &9054715079335150437
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,14 +1,20 @@
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class FlipperScript : MonoBehaviour
 {
     public GameObject leftFlipper;
     public GameObject rightFlipper;
 
-    //Vector3 leftStartRotation =
+    public GameObject leftPivot;
+    public GameObject rightPivot;
 
-    public float flipRotationRate = 100.0f;
+    Quaternion leftStartingRotation;
+    Quaternion rightStartingRotation;
+
+    public float flipRotationRate = 500.0f;
 
     //Input Variables
     bool left = false; //F Key X-
@@ -17,7 +23,8 @@ public class FlipperScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        leftStartingRotation = leftFlipper.transform.rotation;
+        rightStartingRotation = rightFlipper.transform.rotation;
     }
 
     // Update is called once per frame
@@ -25,17 +32,17 @@ public class FlipperScript : MonoBehaviour
     {
         GetInput();
 
-        float horizontal = 0;
+        float l_horizontal = 0, r_horizontal = 0;
         if(left)
         {
-            horizontal = -1;
+            l_horizontal = -1;
         }
         if (right)
         {
-            horizontal = 1;
+            r_horizontal = 1;
         }
 
-        RotateFlipper(horizontal);
+        RotateFlipper(l_horizontal, r_horizontal);
     }
 
     void GetInput()
@@ -51,17 +58,26 @@ public class FlipperScript : MonoBehaviour
         right = kb.jKey.isPressed;
     }
 
-    void RotateFlipper(float value)
+    void RotateFlipper(float leftValue, float rightValue)
     {
-        if (value < 0)
+        if (leftValue < 0)
         {
-            //Rotates the Left Flipper in the -X direction
-            leftFlipper.transform.Rotate(Vector3.left * value * flipRotationRate * Time.deltaTime);
+            //Rotates the Left Flipper in the Up direction
+            leftPivot.transform.rotation = Quaternion.RotateTowards(leftPivot.transform.rotation, leftStartingRotation * Quaternion.Euler(0, -25, 0), flipRotationRate * Time.deltaTime);
         }
-        if (value > 0)
+        if (rightValue > 0)
         {
-            //Rotates the Right Flipper in the +X direction
-            rightFlipper.transform.Rotate(Vector3.right * value * flipRotationRate * Time.deltaTime);
+            //Rotates the Right Flipper in the Up direction
+            rightPivot.transform.rotation = Quaternion.RotateTowards(rightPivot.transform.rotation, rightStartingRotation * Quaternion.Euler(0, 25, 0), flipRotationRate * Time.deltaTime);
+        }
+        if (leftValue == 0)
+        {
+            //Resets the Flippers to their starting rotation
+            leftPivot.transform.rotation = Quaternion.RotateTowards(leftPivot.transform.rotation, leftStartingRotation, flipRotationRate * Time.deltaTime);
+        }
+        if  (rightValue == 0)
+        {
+            rightPivot.transform.rotation = Quaternion.RotateTowards(rightPivot.transform.rotation, rightStartingRotation, flipRotationRate * Time.deltaTime);
         }
     }
 }

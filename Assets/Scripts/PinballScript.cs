@@ -3,7 +3,6 @@ using UnityEngine;
 public class PinballScript : MonoBehaviour
 {
     Vector3 startingLocation = Vector3.zero;
-
     Quaternion startingRotation = Quaternion.identity;
 
     Rigidbody rb;
