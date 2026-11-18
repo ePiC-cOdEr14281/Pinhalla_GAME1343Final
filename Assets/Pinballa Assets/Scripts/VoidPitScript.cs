@@ -9,6 +9,7 @@ public class VoidPitScript : MonoBehaviour
         PinballScript pb = other.gameObject.GetComponent<PinballScript>();
         if (pb)
         {
+            //pb.Destroy();
             pb.Reset();
             Debug.Log("Pinball Reset!");
         }

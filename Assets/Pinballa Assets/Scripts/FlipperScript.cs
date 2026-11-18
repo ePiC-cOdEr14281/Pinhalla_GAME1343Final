@@ -15,10 +15,11 @@ public class FlipperScript : MonoBehaviour
     Quaternion rightStartingRotation;
 
     public float flipRotationRate = 500.0f;
+    
 
     //Input Variables
-    bool left = false; //F Key X-
-    bool right = false; //J Key X+
+    public bool left = false; //F Key X-
+    public bool right = false; //J Key X+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -82,12 +83,4 @@ public class FlipperScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other) //Idk yet
-    {
-        PinballScript pb = other.gameObject.GetComponent<PinballScript>();
-        if (pb)
-        {
-
-        }
-    }
 }
